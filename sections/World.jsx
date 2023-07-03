@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TitleText, TypingText } from "../components";
+import { WorldCards } from "../components/WorldCards";
 
 const World = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -32,6 +33,27 @@ const World = () => (
         <div className="rounded-full absolute bottom-20 right-20 w-[70px] h-[70px] p-[6px] bg-[#5d6680]">
           <img src="people-01.png" alt="people" className="w-full h-full" />
         </div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ rotate: 360, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+          className="absolute hidden md:block bottom-15 right-24 p-[6px] bg-[#5d6680] rounded-[24px] "
+        >
+          <WorldCards img="planet-03.png" worldName="Hawkins Labs" />
+        </motion.div>
+        <motion.div  initial={{ scale: 0 }}
+          animate={{ rotate: 360, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}  className="absolute hidden md:block bottom-12 left-15 p-[6px] bg-[#5d6680] rounded-[24px]">
+          <WorldCards img="planet-02.png" worldName="The Upside Down" />
+        </motion.div>
         <div className="rounded-full absolute top-10 left-20 w-[70px] h-[70px] p-[6px] bg-[#5d6680]">
           <img src="people-02.png" alt="people" className="w-full h-full" />
         </div>
